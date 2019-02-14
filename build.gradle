@@ -32,5 +32,11 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.2.RELEASE'
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-consul-discovery', version: '2.1.0.RELEASE'
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-consul-config', version: '2.1.0.RELEASE'
+	//mysql
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
+	//mybatis
+	compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.0.3'
+	//db
+	compile group: 'com.alibaba', name: 'druid', version: '1.1.11'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
