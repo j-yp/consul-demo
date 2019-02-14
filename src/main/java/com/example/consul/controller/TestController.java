@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.consul.config.StudentConfig;
+import com.example.consul.entity.User;
+import com.example.consul.service.UserService;
 
 @RestController
 @RequestMapping("consul")
@@ -28,6 +30,9 @@ public class TestController {
 	
 	@Value("${myName}")
 	private String myName;
+	
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping("test1")
 	public String testDemo() {
@@ -49,5 +54,12 @@ public class TestController {
 		System.out.println(studentConfig);
 		System.out.println("myName: " + myName);
 		return "test3";
+	}
+	
+	@GetMapping("test4")
+	public String testDataSourceChange() {
+		User user = userService.getUserById("0002302f74ae49328d04a994b85df50d");
+		System.out.println(user.getName());
+		return "test4";
 	}
 }

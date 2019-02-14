@@ -1,5 +1,6 @@
 package com.example.consul;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -13,6 +14,7 @@ import com.example.consul.config.StudentConfig;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableConfigurationProperties({StudentConfig.class})
+@MapperScan(value={"com.example.consul.mapper"})
 public class ConsulApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConsulApplication.class, args);
